@@ -6,62 +6,232 @@
 <title>Hardy Chen | Digital Business Card</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:Inter,Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f5f8fb,#e8eef5);color:#083b63;display:flex;align-items:center;justify-content:center;padding:22px}
-.card{width:100%;max-width:430px;text-align:center;padding:32px 24px;border-radius:30px;background:#fff;border:1px solid rgba(8,59,99,.12);box-shadow:0 24px 70px rgba(0,34,68,.16)}
-.logo{width:100%;max-width:300px;height:auto;margin:0 auto 28px;display:block}
-h1{margin:0;font-size:30px;font-weight:750;letter-spacing:-.6px;color:#003f6b}
-.position{margin-top:16px;font-size:16px;font-weight:600;color:#003f6b}
-.company{margin-top:8px;font-size:15px;color:rgba(0,63,107,.72);line-height:1.5}
-.slogan{margin:22px 0 26px;font-size:14px;line-height:1.55;color:rgba(0,63,107,.62)}
-.buttons{display:flex;flex-direction:column;gap:12px}
-.button{display:block;width:100%;padding:15px 18px;border-radius:15px;text-decoration:none;background:#004b7f;color:#fff;font-size:15px;font-weight:700;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.secondary{background:#eef4f8;color:#004b7f;border:1px solid rgba(0,75,127,.12)}
-.wechat-panel{display:none;margin-top:-4px;padding:14px 12px;border-radius:14px;background:#f7fafc;border:1px solid rgba(0,75,127,.1);color:#003f6b;font-size:14px;line-height:1.5}
-.wechat-panel strong{font-size:16px;letter-spacing:.2px}
-.copy-button{margin-top:10px;width:100%;padding:11px 14px;border-radius:12px;border:none;background:#004b7f;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
-.contact-line{margin-top:22px;font-size:13px;color:rgba(0,63,107,.58);line-height:1.7;word-break:break-word}
-.footer{margin-top:24px;font-size:12px;line-height:1.5;color:rgba(0,63,107,.42)}
+
+:root{
+  --bpg-blue:#004b9b;
+  --bpg-deep:#003f80;
+  --text-main:#083b63;
+  --text-soft:rgba(8,59,99,.66);
+  --line:rgba(0,75,127,.14);
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#f5f8fb,#e8eef5);
+  color:var(--text-main);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+}
+
+.phone-frame{
+  width:100%;
+  max-width:430px;
+  padding:18px;
+  border-radius:42px;
+  background:linear-gradient(180deg,#ffffff,#edf5fd);
+  box-shadow:0 24px 70px rgba(0,34,68,.18);
+}
+
+.card{
+  width:100%;
+  min-height:760px;
+  text-align:center;
+  padding:44px 24px 28px;
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 50% 28%,rgba(232,244,255,.85),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#fff 68%,#f1f7fd 100%);
+  border:1px solid rgba(8,59,99,.1);
+  position:relative;
+  overflow:hidden;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:68px;
+  background:linear-gradient(135deg,#eaf4ff 0%,#fff 46%,#004b9b 47%,#005ac0 100%);
+  opacity:.95;
+  pointer-events:none;
+}
+
+.logo{
+  width:100%;
+  max-width:300px;
+  height:auto;
+  margin:0 auto 80px;
+  display:block;
+}
+
+.avatar{
+  width:178px;
+  height:178px;
+  border-radius:50%;
+  margin:0 auto 28px;
+  background:linear-gradient(135deg,#eef7ff,#dcecff);
+  border:8px solid #fff;
+  box-shadow:0 8px 24px rgba(0,75,127,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.avatar svg{
+  width:100%;
+  height:100%;
+}
+
+h1{
+  margin:0;
+  font-size:38px;
+  font-weight:800;
+  letter-spacing:-.9px;
+  color:var(--bpg-deep);
+}
+
+.name-line{
+  width:44px;
+  height:3px;
+  background:var(--bpg-deep);
+  border-radius:2px;
+  margin:18px auto 18px;
+}
+
+.position{
+  margin-top:0;
+  font-size:19px;
+  font-weight:500;
+  color:#203550;
+}
+
+.department{
+  margin:16px auto 26px;
+  padding-top:16px;
+  max-width:300px;
+  border-top:1px solid rgba(0,75,127,.14);
+  font-size:18px;
+  color:rgba(32,53,80,.72);
+}
+
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  position:relative;
+  z-index:2;
+}
+
+.button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:58px;
+  padding:15px 18px;
+  border-radius:18px;
+  text-decoration:none;
+  background:linear-gradient(135deg,#0067da,#003f9a);
+  color:#fff;
+  font-size:20px;
+  font-weight:700;
+  border:1px solid rgba(0,75,127,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 20px rgba(0,75,127,.18);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  position:relative;
+}
+
+.secondary{
+  background:#fff;
+  color:var(--bpg-blue);
+  box-shadow:0 8px 18px rgba(0,34,68,.06);
+  border:1px solid rgba(0,75,127,.13);
+}
+
+.icon{
+  position:absolute;
+  left:48px;
+  width:26px;
+  height:26px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  line-height:1;
+}
+
+.footer{
+  display:none;
+}
+
+@media (max-width:460px){
+  body{padding:12px}
+  .phone-frame{border-radius:34px;padding:12px}
+  .card{min-height:720px;padding:38px 20px 28px;border-radius:28px}
+  .logo{max-width:260px;margin-bottom:64px}
+  .avatar{width:160px;height:160px;margin-bottom:24px}
+  h1{font-size:34px}
+  .position{font-size:18px}
+  .department{font-size:17px}
+  .button{min-height:56px;font-size:19px}
+  .icon{left:38px}
+}
 </style>
 </head>
+
 <body>
-<main class="card">
-  <img class="logo" src="bpg-official-logo.png" alt="Baiyun Power Group Logo">
-  <h1>Hardy Chen</h1>
-  <div class="position">International Presales Engineer</div>
-  <div class="company">Baiyun Power Group<br>白云电气集团有限公司</div>
-  <div class="slogan">Practitioner and Pioneer in Green and Smart Energy</div>
+<div class="phone-frame">
+  <main class="card">
+    <img class="logo" src="bpg-official-logo.png" alt="Baiyun Power Group Logo">
 
-  <div class="buttons">
-    <a class="button" href="Hardy-Chen.vcf">Save Contact</a>
-
-    <button class="button secondary" type="button" onclick="toggleWeChat()">WeChat</button>
-    <div id="wechatPanel" class="wechat-panel">
-      WeChat ID: <strong id="wechatId">Hardy_Channn0901</strong>
-      <button class="copy-button" type="button" onclick="copyWeChat()">Copy WeChat ID</button>
+    <div class="avatar" aria-label="Profile avatar">
+      <svg viewBox="0 0 200 200" role="img" aria-hidden="true">
+        <circle cx="100" cy="100" r="100" fill="#e9f5ff"/>
+        <path d="M54 177c8-40 28-61 46-61s38 21 46 61" fill="#102a4c"/>
+        <path d="M70 137c13 14 47 14 60 0l12 40H58z" fill="#162f57"/>
+        <path d="M80 130h40l-8 44H88z" fill="#ffffff"/>
+        <path d="M90 132h20l5 42H85z" fill="#113c78"/>
+        <path d="M67 84c2-35 20-52 36-52s32 19 30 54c-2 31-16 49-33 49S65 115 67 84z" fill="#ffd9c5"/>
+        <path d="M62 77c2-35 23-54 47-52 20 2 37 15 39 43-26-6-43-20-76-6-4 2-7 8-10 15z" fill="#111a28"/>
+        <path d="M66 92c-8-2-10 10-5 20 3 7 8 9 11 6M134 92c8-2 10 10 5 20-3 7-8 9-11 6" fill="#ffd9c5"/>
+      </svg>
     </div>
 
-    <a class="button secondary" href="https://wa.me/8618123550218" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="button secondary" href="mailto:Hardychan0901@outlook.com">Email</a>
-    <a class="button secondary" href="https://www.baiyunpower.com" target="_blank" rel="noopener">Company Website</a>
-  </div>
+    <h1>Hardy Chen</h1>
+    <div class="name-line"></div>
+    <div class="position">International Presales Engineer</div>
+    <div class="department">International Marketing Center</div>
 
-  <div class="contact-line">+86 181 2355 0218<br>Hardychan0901@outlook.com</div>
-  <div class="footer">Baiyun Power Group Co., Ltd.<br>Guangzhou, China</div>
-</main>
+    <div class="buttons">
+      <a class="button" href="Hardy-Chen.vcf">
+        <span class="icon">👤</span>
+        Save Contact
+      </a>
 
-<script>
-function toggleWeChat(){
- const panel=document.getElementById("wechatPanel");
- panel.style.display = panel.style.display === "block" ? "none" : "block";
-}
-function copyWeChat(){
- const text=document.getElementById("wechatId").innerText;
- if(navigator.clipboard){
-   navigator.clipboard.writeText(text).then(()=>alert("WeChat ID copied: "+text)).catch(()=>alert("WeChat ID: "+text));
- } else {
-   alert("WeChat ID: "+text);
- }
-}
-</script>
+      <a class="button secondary" href="https://wa.me/8618123550218" target="_blank" rel="noopener">
+        <span class="icon">☏</span>
+        WhatsApp
+      </a>
+
+      <a class="button secondary" href="mailto:Hardychan0901@outlook.com">
+        <span class="icon">✉</span>
+        Email
+      </a>
+
+      <a class="button secondary" href="https://www.baiyunpower.com" target="_blank" rel="noopener">
+        <span class="icon">◎</span>
+        Company Website
+      </a>
+    </div>
+  </main>
+</div>
 </body>
 </html>

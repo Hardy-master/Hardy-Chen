@@ -1,13 +1,13 @@
-Hardy Chen Digital Business Card
+Hardy Chen Pure English Digital Business Card
 
 Upload these files to GitHub repository root:
 - index.html
 - Hardy-Chen.vcf
 - bpg-official-logo.png
 
-Buttons:
-1. Save Contact
-2. WeChat
-3. WhatsApp
-4. Email
-5. Company Website
+UI changes:
+- Pure English logo
+- No Chinese company name on the page
+- No slogan
+- No WeChat button
+- Buttons: Save Contact, WhatsApp, Email, Company Website
