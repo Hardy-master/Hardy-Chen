@@ -13,6 +13,7 @@
   --text-main:#083b63;
   --text-soft:rgba(8,59,99,.66);
   --line:rgba(0,75,127,.14);
+  --whatsapp:#25D366;
 }
 
 body{
@@ -159,13 +160,22 @@ h1{
 .icon{
   position:absolute;
   left:48px;
-  width:26px;
-  height:26px;
+  width:28px;
+  height:28px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  font-size:24px;
-  line-height:1;
+  color:currentColor;
+}
+
+.icon svg{
+  width:28px;
+  height:28px;
+  display:block;
+}
+
+.whatsapp-icon{
+  color:var(--whatsapp);
 }
 
 .footer{
@@ -212,22 +222,44 @@ h1{
 
     <div class="buttons">
       <a class="button" href="Hardy-Chen.vcf">
-        <span class="icon">👤</span>
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" fill="currentColor"/>
+            <path d="M4 21a8 8 0 0 1 16 0Z" fill="currentColor"/>
+            <path d="M19 9v6M16 12h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
         Save Contact
       </a>
 
       <a class="button secondary" href="https://wa.me/8618123550218" target="_blank" rel="noopener">
-        <span class="icon">☏</span>
+        <span class="icon whatsapp-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="15" fill="#25D366"/>
+            <path d="M9.3 23.1 10.5 19A8.7 8.7 0 1 1 13 21.4l-3.7 1.7Z" fill="#fff"/>
+            <path d="M13.2 10.9c-.2-.5-.4-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.1 3.4 5.3 4.6 2.6 1 3.1.8 3.7.7.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.7-.4l-2.1-1c-.3-.1-.6-.2-.8.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.8.1-.3-.2-1.4-.5-2.7-1.7-1-1-1.7-2.1-1.9-2.4-.2-.4 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2.1-.4 0-.6l-1-2.4Z" fill="#25D366"/>
+          </svg>
+        </span>
         WhatsApp
       </a>
 
       <a class="button secondary" href="mailto:Hardychan0901@outlook.com">
-        <span class="icon">✉</span>
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
         Email
       </a>
 
       <a class="button secondary" href="https://www.baiyunpower.com" target="_blank" rel="noopener">
-        <span class="icon">◎</span>
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </span>
         Company Website
       </a>
     </div>
