@@ -1,12 +1,16 @@
-Hardy Chen Pure English Digital Business Card - WhatsApp Icon Version
+Hardy Chen Simple Digital Business Card
 
 Upload these files to GitHub repository root:
 - index.html
 - Hardy-Chen.vcf
 - bpg-official-logo.png
 
-Changes:
-- WhatsApp button now uses a green WhatsApp-style logo icon.
-- Pure English logo.
-- No Chinese company name on page.
-- Buttons: Save Contact, WhatsApp, Email, Company Website.
+Buttons:
+1. Save Contact
+2. WhatsApp
+3. Email
+4. Company Website
+
+WeChat is not displayed on the webpage.
+WeChat ID is stored only in the vCard note:
+Hardy_Channn0901
